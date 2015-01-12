@@ -1,0 +1,29 @@
+SUB $t0 $0 4
+SUB $t5 $0 -4
+SH $t0 0($t1)
+LW $t2 0($t1)
+SH $t5 -12($t1)
+LW $t3 20($t1)
+SW $t5 -12($t7)
+LH $t6 20($t5)
+JNE -12
+jumpinjne:
+SUB $t7 $t6 $t5
+ADD $t8 $0 43
+OR $t9 $t3 $t4
+DIV $t10 $t4 -1
+DIV $t11 $t9 $t10
+ADD $t12 $0 135
+REV $t13 $t12 2
+ADD $t14 $0 54
+JAL $t14
+YES:
+ADD $t15 $0 -54
+JAL $t15
+NO:
+XOR $t16 $t3 $t4
+SUB $t17 $t7 $t8
+MUL $t18 $t4 $t3
+MUL $t19 $t4 3
+DIV $t0 $t4 4
+DIV $t5 $t4 0

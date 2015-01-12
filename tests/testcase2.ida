@@ -1,0 +1,50 @@
+SUB $t1 $0 4
+SW $t1 0($t2)
+LW $t3 0($t2) 
+SL $t4 $t3 3   
+ADD $t7 $0 -4
+ADD $t17 $0 5
+ADD $t18 $0 3
+SUB $t19 $t18 $t17
+JGE @jumpingjge
+jumpingjge:
+SUB $t19 $t17 $t18
+JGE @jumpingjge1
+jumpingjge1:
+SL $t15 $t2 -2
+SL $t16 $t2 $t1 
+jumpingjlt:
+SL $t15 $t2 2
+SL $t16 $t2 $t1 
+JLT 21:
+SR $t13 $t2 -2
+SR $14 $t2 $t1 
+SUB $t7 $t4 $t3
+JLE @jumpingjle
+jumpingjle:
+SUB $t7 $t3 $t4
+JLE 27
+b:
+SL $t10 $t2 2
+SL $t11 $t2 $t1 
+JEQ @jumpingjeq
+jumpingjeq:
+SL $t11 $t11 $t11 
+JEQ @c
+c:
+SUB $t7 $t6 $t5 
+JNE @jumpingjne
+jumpingjne:
+SUB $t7 $t5 $t6 
+JNE @d
+d:
+SR $t8 $t2 2
+SR $t9 $t2 $t1 
+SUB $t7 $t7 $t8
+JGT @jumpingjgt
+jumpingjgt:
+SUB $t7 $t8 $t7
+JGT @e
+e:
+SR $t5 $t3 $t1 
+SL $t6 $t2 -3  
